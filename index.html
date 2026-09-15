@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Emmanuel Ngunjiri Muriithi — full-stack developer in Nairobi, Kenya, building production web and mobile apps with Next.js, Flutter, and M-Pesa payment integrations.">
 <title>Emmanuel Ngunjiri Muriithi — Full-Stack Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -50,6 +51,21 @@
   ::selection{background:var(--blue-bright);color:var(--near-black);}
 
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+
+  /* ---------- accessibility ---------- */
+  .skip-link{
+    position:absolute;top:-48px;left:16px;
+    background:var(--blue-bright);color:var(--near-black);
+    font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;
+    padding:10px 16px;border-radius:2px;z-index:200;
+    transition:top 0.2s;
+  }
+  .skip-link:focus{top:12px;}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--blue-bright);
+    outline-offset:3px;
+    border-radius:2px;
+  }
 
   /* ---------- status bar ---------- */
   .statusbar{
@@ -298,6 +314,7 @@
   .info-row:last-child{border-bottom:none;}
   .info-row .k{font-family:'JetBrains Mono',monospace;color:var(--text-low);}
   .info-row .v{color:var(--text-hi);text-align:right;font-weight:500;}
+  .info-row .v a:hover{color:var(--blue-bright);}
 
   /* ---------- skills ---------- */
   .skills-grid{
@@ -467,6 +484,7 @@
     nav.open{display:flex;}
     .navtoggle{display:block;}
     .contact-panel{padding:36px 22px;}
+    .statusbar .meta{display:none;}
   }
   @media (prefers-reduced-motion: reduce){
     *{animation:none !important;transition:none !important;}
@@ -474,6 +492,8 @@
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#about">Skip to content</a>
 
 <div class="statusbar">
   <div class="wrap">
@@ -490,7 +510,7 @@
       <span id="clock">EAT 00:00:00</span>
       <span class="badge">session: verified</span>
     </div>
-    <button class="navtoggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <button class="navtoggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">☰</button>
   </div>
 </div>
 
@@ -501,7 +521,7 @@
       <div class="terminal-line"><span class="prompt">guest@portfolio</span>:~$ whoami<span class="caret"></span></div>
       <h1>Emmanuel Ngunjiri<br><span>Muriithi.</span></h1>
       <div class="role">&gt; Full-Stack Developer — Web &amp; Mobile<span class="cursor"></span></div>
-      <p class="desc">I build and ship production software end-to-end — from M-Pesa payment integrations and secure authentication systems to admin dashboards and cross-platform mobile apps. Based in Nairobi, Kenya.</p>
+      <p class="desc">I build and ship production software end-to-end — a live logistics company website, M-Pesa payment integrations, secure authentication systems, admin dashboards, and cross-platform mobile apps. Based in Nairobi, Kenya.</p>
       <div class="cta-row">
         <a href="#projects" class="btn btn-primary">View Projects →</a>
         <a href="#contact" class="btn btn-ghost">Get In Touch</a>
@@ -516,7 +536,10 @@
         <img src="assets/emmanuel.jpeg" alt="Emmanuel Ngunjiri Muriithi">
         <div class="scan-line"></div>
       </div>
-      
+      <div class="verify-tag" id="verifyTag">
+        <span class="ok-txt">Identity verified</span>
+        <span>Nairobi, KE</span>
+      </div>
     </div>
   </div>
 </section>
@@ -527,7 +550,7 @@
     <div class="eyebrow">01 — about</div>
     <div class="about-grid">
       <div class="reveal">
-        <p><strong>I'm a full-stack software developer</strong> with hands-on production experience designing, building, and shipping web and mobile applications end-to-end. My work spans payment gateway integration, secure authentication systems, admin analytics dashboards, and cross-platform mobile apps.</p>
+        <p><strong>I'm a full-stack software developer</strong> with hands-on production experience designing, building, and shipping web and mobile applications end-to-end — including a live client website. My work spans payment gateway integration, secure authentication systems, admin analytics dashboards, and cross-platform mobile apps.</p>
         <p>I'm comfortable across the modern JavaScript/TypeScript ecosystem — <strong>React and Next.js</strong> — and <strong>Flutter</strong> for mobile, backed by a strong foundation in database design, IT support, and customer-facing service delivery.</p>
         <p>Proactive and detail-oriented, I focus on building reliable, user-friendly solutions in fast-moving environments — and I've hardened real payment flows after learning the hard way what "production" really means.</p>
       </div>
@@ -537,9 +560,9 @@
         <div class="info-row"><span class="k">focus</span><span class="v">Full-Stack · Mobile</span></div>
         <div class="info-row"><span class="k">stack</span><span class="v">Next.js · Flutter</span></div>
         <div class="info-row"><span class="k">education</span><span class="v">BSc Applied CS</span></div>
-        <div class="info-row"><span class="k">email</span><span class="v">ngunjirimure@gmail.com</span></div>
-        <div class="info-row"><span class="k">phone</span><span class="v">0757 573 471</span></div>
-        <div class="info-row"><span class="k">github</span><span class="v">ManuMure</span></div>
+        <div class="info-row"><span class="k">email</span><span class="v"><a href="mailto:ngunjirimure@gmail.com">ngunjirimure@gmail.com</a></span></div>
+        <div class="info-row"><span class="k">phone</span><span class="v"><a href="tel:+254757573471">0757 573 471</a></span></div>
+        <div class="info-row"><span class="k">github</span><span class="v"><a href="https://github.com/ManuMure" target="_blank" rel="noopener">ManuMure</a></span></div>
         <div class="info-row"><span class="k">status</span><span class="v" style="color:var(--ok);">open to work</span></div>
       </div>
     </div>
@@ -583,7 +606,27 @@
     <div class="eyebrow">03 — selected work</div>
     <div class="section-head">
       <h2>Featured projects</h2>
-      <p>Production systems and side builds — from fintech integrations to full-stack e-commerce.</p>
+      <p>Production systems, client work, and side builds — from a live logistics company site to fintech integrations and full-stack e-commerce.</p>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-top">
+        <div>
+          <h3>Trade Link Logistics</h3>
+          <div class="sub">Live production website for a licensed customs clearance &amp; freight forwarding company — Mombasa, Kenya</div>
+        </div>
+        <span class="status shipped">client site</span>
+      </div>
+      <ul>
+        <li>Designed and built the full marketing site end-to-end in Next.js for a real client, from first mockup to production deployment.</li>
+        <li>Structured dedicated service pages for import/export clearance, sea freight (FCL &amp; LCL), air freight, and inland transport.</li>
+        <li>Built the contact and quote-request flow the business now uses to field real customer inquiries across its Mombasa and Nairobi offices.</li>
+        <li>Optimized an image-heavy hero and service sections for fast loading using Next.js image handling.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Next.js</span><span class="tag">Client Project</span><span class="tag">Production</span>
+      </div>
+      <a class="project-link" href="https://tradelinklogisticsltd.co.ke" target="_blank" rel="noopener">tradelinklogisticsltd.co.ke →</a>
     </div>
 
     <div class="project reveal">
@@ -752,10 +795,10 @@
     <div class="contact-panel reveal">
       <div class="eyebrow" style="justify-content:center;">06 — get in touch</div>
       <h2>Let's build something reliable.</h2>
-      <p>Open to full-stack, mobile, and fintech-integration opportunities. Based in Nairobi, working with teams anywhere.</p>
+      <p>Open to full-stack, mobile, fintech-integration, and client website opportunities. Based in Nairobi, working with teams anywhere.</p>
       <div class="contact-row">
         <a href="mailto:ngunjirimure@gmail.com" class="btn btn-primary">ngunjirimure@gmail.com</a>
-        <a href="tel:0757573471" class="btn btn-ghost">0757 573 471</a>
+        <a href="tel:+254757573471" class="btn btn-ghost">0757 573 471</a>
         <a href="https://github.com/ManuMure" target="_blank" rel="noopener" class="btn btn-ghost">github.com/ManuMure</a>
       </div>
     </div>
@@ -790,8 +833,14 @@
   // mobile nav
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('mainNav');
-  navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
-  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
 
   // role typing animation
   const roles = [
@@ -821,12 +870,12 @@
   // terminal boot line
   setTimeout(() => {
     document.querySelector('.terminal-line').innerHTML =
-      
       '<span class="ok">✓ Emmanuel Ngunjiri Muriithi — Full-Stack Developer</span><span class="caret"></span>';
   }, 1200);
 
   // verify tag + scroll reveal
-  setTimeout(() => document.getElementById('verifyTag').classList.add('show'), 1800);
+  const verifyTag = document.getElementById('verifyTag');
+  if(verifyTag){ setTimeout(() => verifyTag.classList.add('show'), 1800); }
 
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
